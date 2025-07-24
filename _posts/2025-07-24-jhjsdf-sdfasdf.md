@@ -8,4 +8,4 @@ tags: [writing]
 
 test
 
-![[assets/my_img/2025-07-24-jhjsdf-sdfasdf.png]]
+![1231](/assets/my_img/2025-07-24-jhjsdf-sdfasdf.png)
