@@ -10,7 +10,7 @@ tags:
   - getting
   - started
 pin: false
-media_subpath: /posts/20180809
+media_subpath: /assets/posts/20180809
 ---
 
 ## Creating a Site Repository
