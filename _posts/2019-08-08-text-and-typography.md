@@ -8,6 +8,7 @@ categories:
   - Demo
 tags:
   - typography
+comments: false
 pin: false
 math: true
 mermaid: true

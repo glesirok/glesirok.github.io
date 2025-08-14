@@ -10,6 +10,7 @@ tags:
   - getting
   - started
 pin: false
+comments: false
 media_subpath: /assets/posts/20180809
 ---
 
