@@ -19,6 +19,9 @@ apt update
 
 # 升级所有已安装的软件包
 apt upgrade -y
+
+# 可选：build-essential它包含了创建一个 Debian 包（.deb）所需的软件包列表安装gcc/g++/gdb/make 等基本编程工具
+apt install build-essential
 ```
 
 这里的 `-y` 参数会自动确认所有升级提示，节省时间。
