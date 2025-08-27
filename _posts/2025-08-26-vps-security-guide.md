@@ -217,9 +217,35 @@ fail2ban-client unban 1.1.1.1
 #删除特定服务的(如sshd)被ban IP
 fail2ban-client set sshd delignoreip 1.1.1.1
 ```
+# 5 设置系统时间
 
+将系统时间设置为北京时间，推荐使用 `timedatectl` 命令。
 
-# 5 通知服务器SSH登录
+北京时间的正确时区标识符是 Asia/Shanghai。您看到的错误消息是因为该工具要求使用较旧、不太常见的 POSIX 格式，但现代系统使用 Area/Location 格式。
+
+这是大多数现代 Linux 发行版（如 Ubuntu、Debian、CentOS 和 Fedora）的标准系统范围方法。
+
+1. 设置时区
+    
+    在终端中运行以下命令。
+```bash
+sudo timedatectl set-timezone Asia/Shanghai
+```
+    
+2. 验证更改
+    
+    可以通过运行以下任一命令来检查更改是否成功：
+```bash
+timedatectl
+```
+显示本地时间、世界标准时间 (UTC) 和当前设置的时区。
+或者：
+```bash
+date
+```
+输出现在应该显示 CST（中国标准时间）和正确的时间。
+
+# 6 通知服务器SSH登录
 
 在登录 ssh 时候自动发通知到微信，以防偷家
 
@@ -263,7 +289,7 @@ curl -s -X POST "$webhook_url" \
 [群机器人配置说明 - 文档 - 企业微信开发者中心](https://developer.work.weixin.qq.com/document/path/91770)
 
 
-# 6 创建非 root 账户
+# 7 创建非 root 账户
 
 使用以下命令创建一个具有提权能力的账户：
 
@@ -305,7 +331,7 @@ sudo visudo
 
 注意如果用户没移出**sudo用户组**，即使按上述代码修改也会要求输入密码，除非你将**sudo用户组**也设为NOPASSWD
 
-# 7 ssh设置密钥登陆
+# 8 ssh设置密钥登陆
 
 执行以下命令编辑 SSH 配置文件, 也可改/etc/ssh/sshd_config.d/里的配置（见1）：
 
@@ -328,7 +354,7 @@ Match User 用户名
 sudo systemctl restart ssh
 ```
 
-# 8 禁用 root SSH 密码远程登陆
+# 9 禁用 root SSH 密码远程登陆
 
 执行以下命令编辑 SSH 配置文件, 也可改/etc/ssh/sshd_config.d/里的配置（见1）：
 
@@ -353,13 +379,13 @@ sudo systemctl restart ssh
 
 - 直接禁掉root登录`PermitRootLogin no`我也不常用，更习惯和其他sudoer一样配密钥然后禁止密码登录仅允许密钥登录。
 
-# 9 禁止icmp
+# 10 禁止icmp
 
 ufw本身没有直接支持阻止icmp协议的命令。
 一般来说不建议禁止icmp，这只是为了测服务器连通性的，不会涉及到具体端口的服务
 要改的话一般使用iptables改，也可以去修改ufw的配置实现
 
-参考：
+# 11 参考资料：
 
 https://linux.do/t/topic/267502
 https://linux.do/t/topic/817769
