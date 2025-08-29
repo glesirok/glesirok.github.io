@@ -191,7 +191,7 @@ maxmatches = 0
 
 ## 4.4 验证配置是否生效
 
-`tail -f /var/log/ban_sshd.log`或者`fail2ban-client status sshd`
+`tail -f /var/log/fail2ban.log`或者`fail2ban-client status sshd`或者
 
 就能看到目前正在爆破你和ban掉爆破ssh的ip日志，和目前已经封禁的ip了
 

@@ -6,6 +6,8 @@ categories:
   - Python
 tags:
   - Python
+  - Pyenv
+  - Pipenv
 comments: true
 ---
 # 1 pyenv
@@ -42,7 +44,7 @@ pyenv doctor
 ![](assets/posts/20250827/2025-08-27-python-cl1756285983.png)
 如果出现红字，会有提示教你怎么解决，底部还有解决问题的链接
 
-## 1.1 安装python：
+## 1.1 安装Python：
 ```bash
 pyenv install -l  # 会给出所有可用版本的列表
 pyenv install 3.10.4   # 安装
@@ -55,12 +57,13 @@ pyenv install 3.10.4   # 安装
 - `pyenv global <version>` -- 全局使用的python版本
 # 2 pipenv
 
-目的：包管理器，且可以实现类似虚拟环境的功能，基于pip，pip更换后，是需要重新install pipenv的，一个pip对应一个pipenv
+目的：包管理器，且可以实现类似虚拟环境的功能，基于pip，pip更换后，是需要重新install pipenv的，一个pip对应一个pipenv，如果一个项目用的是pipenv管理，后续不能使用pip（其他项目除外）——如果用pip那么该包不受pipenv管理
 安装：
 ```bash
 pip install pipenv
 ```
 常用命令：
-```
-
+```bash
+pipenv shell   #激活环境
+pipenv run python xxx.py     #可以不显示激活，使用pipenv run也是项目环境
 ```
