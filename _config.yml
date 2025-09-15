@@ -120,12 +120,12 @@ comments:
   # Giscus options › https://giscus.app
   giscus:
     repo: glesirok/glesirok.github.io # <gh-username>/<repo>
-    repo_id: R_kgDOPRVFVg
+    repo_id: R_kgDOPv6dGg
     category: Comments
-    category_id: DIC_kwDOPRVFVs4CuK4Y
+    category_id: DIC_kwDOPv6dGs4Cvcpm
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
-    input_position: # optional, default to 'bottom'
+    input_position: top # optional, default to 'bottom'
     lang: # optional, default to the value of `site.lang`
     reactions_enabled: # optional, default to the value of `1`
 
