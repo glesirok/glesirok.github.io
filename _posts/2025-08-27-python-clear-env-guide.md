@@ -64,6 +64,8 @@ pip install pipenv
 ```
 常用命令：
 ```bash
+pipenv install   #创建环境
+pipenv install 包名  # 安装包
 pipenv shell   #激活环境
 pipenv run python xxx.py     #可以不显示激活，使用pipenv run也是项目环境
 ```
