@@ -69,16 +69,13 @@ a. 全局搜索`func elevatedRun(name string, arg ...string) (bool, error)`
 注释里面的调用提权cmd的片段
 ``` go
 func elevatedRun(name string, arg ...string) (bool, error) {
-
-    ok, err := run("cmd", nil, append([]string{"/C", name}, arg...)...)
-    // if err != nil {
-    //  exe, _ := os.Executable()
-    //  cmd := filepath.Join(filepath.Dir(exe), "elevate.cmd")
-    //  ok, err = run(cmd, &env.root, append([]string{"cmd", "/C", name}, arg...)...)
-    // }
-
-    return ok, err
-
+  ok, err := run("cmd", nil, append([]string{"/C", name}, arg...)...)
+    // if err != nil {
+    //  exe, _ := os.Executable()
+    //  cmd := filepath.Join(filepath.Dir(exe), "elevate.cmd")
+    //  ok, err = run(cmd, &env.root, append([]string{"cmd", "/C", name}, arg...)...)
+    // }
+    return ok, err
 }
 ```
 
