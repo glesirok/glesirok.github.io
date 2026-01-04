@@ -32,3 +32,9 @@ go-zero 的 JWT 中间件会自动将 JWT claims 中的 key 存储到 context，
 ``` go
 ctx.Value("userId")
 ```
+
+
+
+## Go-Zero理念
+
+使用gateway做http api汇总做http层，其他微服务直接使用grpc，gateway调用grpc服务
